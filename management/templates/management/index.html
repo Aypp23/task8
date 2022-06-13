@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XYZ Hotel</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        fieldset{
+            margin: 2em 0;
+            padding: 1em 2em;
+            border: solid ipx #ccc;
+            border-radius: 6px;
+            min-width: 200px;
+        }
+        legend{
+            font-size: 1.25em;
+            padding: 0 .25em;
+            color: #999;
+        }
+        label{
+            display: block;
+            margin-top: 1em;
+        }
+        label:first-of-type{
+            margin-top: 0;
+        }
+        input{
+            padding: .5em;
+            border: solid 1px #999;
+        }
+        input[type="email"], input[type="text"] {
+            width: 15em;
+        }
+        input[type='submit'] {
+            margin-top: 2em;
+            display: block;
+            padding: 1em 1 em;
+            border-radius: 6px;
+            background-color: #333;
+            color: #fff;
+            font-size: .8em;
+        }
+        @media screen and (min-width:430px) {
+            legend{
+                font-size: 1.75em;
+            }
+            fieldset{
+                width: 40%;
+                min-width: 320px;
+                margin: auto;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+          <fieldset>
+            <legend>XYZ Hotel</legend>
+
+            <label for="roomnumber">Room Number</label>
+            <input type="number" name="room_number" />
+
+            <label for="amount">Amount</label>
+            <input type="number" name="room_amount" />
+
+            <label for="name">Guest Name</label>
+            <input type="text" name="guest_name" />
+
+            <label for="email">Guest Email</label>
+            <input type="email" name="guest_email" />
+
+            <label for="occupation">Guest Occupation</label>
+            <input type="text" name="guest_occupation" />
+
+            <label for="noofnights">Number of Nights</label>
+            <input type="number" name="nights" />
+
+            <label for="start">Start Date</label>
+            <input type="date" name="start_date" />
+
+            <label for="end">End Date</label>
+            <input type="date" name="end_date" />
+
+            <input type="submit" value="Submit">
+          </fieldset>
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
